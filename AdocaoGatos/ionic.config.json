@@ -1,0 +1,7 @@
+{
+  "name": "AdocaoGatos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
