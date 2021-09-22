@@ -12,6 +12,18 @@
   --background: #ececec;
 }
 
+ion-card-header img{
+  width: 150px;
+  height: 150px;
+}
+
+ion-card{
+  --background: #813b3b; // trocar cor
+  width: 40%;
+  left: 10%;
+  float:left;
+}
+
 #container strong {
   font-size: 20px;
   line-height: 26px;
