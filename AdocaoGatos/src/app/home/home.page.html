@@ -1,5 +1,6 @@
 <ion-header [translucent]="true" >
   <ion-toolbar id="cor_header">
+    <ion-icon name="menu" class="menu"></ion-icon>
     <ion-title id="header">
       Home
     </ion-title>
@@ -7,10 +8,50 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="container">
+  <ion-item>
+    <ion-label>{{nome}}</ion-label>
+    <ion-toggle [(ngModel)]="opcao" (click)="togle()"></ion-toggle>
+  </ion-item>
+  <!-- <div id="container"> -->
+    <div id="container">
+      <div *ngIf="opcao">
+      <ion-card >
+        <ion-card-header>
+          <img src="assets/icon/teste.png">
+          <ion-card-subtitle>
+            Subtítulo do cartão
+          </ion-card-subtitle>
+          <ion-card-title>
+            Título do meu cartão
+          </ion-card-title>
+          <ion-button color="primary">Adotar</ion-button>
+        </ion-card-header>
+      </ion-card>
 
-  <div id="container">
-    <strong>fazer lista de gatos</strong>
-  </div>
+      <ion-card>
+        <ion-card-header>
+          <img src="assets/icon/teste.png">
+          <ion-card-subtitle>
+            Subtítulo do cartão
+          </ion-card-subtitle>
+          <ion-card-title>
+            Título do meu cartão
+          </ion-card-title>
+          <ion-button color="primary">Adotar</ion-button>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    </div>
+
+    <div *ngIf="!opcao">
+      <ion-card class="card">
+        <ion-input placeholder="Nome gato"></ion-input>
+        <ion-input placeholder="Nome dono"></ion-input>
+        <ion-input placeholder="Telefone"></ion-input>
+        <input type="file" class="file-input"/>
+        <ion-button color="primary">salvar</ion-button>
+      </ion-card>
+    </div>
 </ion-content>
 
 <ion-footer [translucent]="true" >
