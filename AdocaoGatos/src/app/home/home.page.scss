@@ -56,6 +56,7 @@ ion-card{
 
 #header{
   text-align: center;
+  width: 120px;
 }
 
 #cor_header{
@@ -64,6 +65,10 @@ ion-card{
 
 #cor_footer{
   --background: #fabf61;
+}
+
+#footer {
+  font-size: 14px;
 }
 
 .div-formulario {
