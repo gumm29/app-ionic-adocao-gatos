@@ -2,7 +2,7 @@
   <ion-toolbar id="cor_header">
     <ion-icon name="menu" class="menu"></ion-icon>
     <ion-title id="header">
-      <img alt="logo" id="header_logo" height="25" float-left src="https://1.bp.blogspot.com/-cYXldDhDboY/YU1LA5X6mEI/AAAAAAAAXhI/iVxO_pbl_jouA8qzaE3mWZ91FkD3kndUACLcBGAsYHQ/s500/Miau%2B%25283%2529.png">
+      <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,27 +17,27 @@
       <div *ngIf="opcao">
       <ion-card >
         <ion-card-header>
-          <img src="assets/icon/teste.png">
+          <img src="assets/icon/foto-gatinho.jpeg">
+          <ion-card-title>
+            Dorinha
+          </ion-card-title>
           <ion-card-subtitle>
             Subtítulo do cartão
           </ion-card-subtitle>
-          <ion-card-title>
-            Título do meu cartão
-          </ion-card-title>
           <ion-button color="primary" (click)="abrirPagina()">Adotar</ion-button>
         </ion-card-header>
       </ion-card>
 
       <ion-card>
         <ion-card-header>
-          <img src="assets/icon/teste.png">
+          <img src="assets/icon/oreo.jpeg">
+          <ion-card-title>
+            Oreo
+          </ion-card-title>
           <ion-card-subtitle>
             Subtítulo do cartão
           </ion-card-subtitle>
-          <ion-card-title>
-            Título do meu cartão
-          </ion-card-title>
-          <ion-button color="primary">Adotar</ion-button>
+          <ion-button color="primary" (click)="abrirPagina()">Adotar</ion-button>
         </ion-card-header>
       </ion-card>
     </div>
