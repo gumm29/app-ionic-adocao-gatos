@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'formulario',
+    path: 'formulario/:id',
     loadChildren: () => import('./formulario/formulario.module').then( m => m.FormularioPageModule)
   },
   {

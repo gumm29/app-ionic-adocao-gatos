@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   top: 50%;
+  padding: 200px;
   transform: translateY(-50%);
 }
 
@@ -37,6 +38,7 @@ ion-card{
   --background: #ED8F65;
   width: 40%;
   left: 10%;
+  padding: 30px;
   float:left;
 }
 
@@ -52,6 +54,10 @@ ion-card{
   color: #8c8c8c;
 
   margin: 0;
+}
+
+ion-card-subtitle{
+  color: aliceblue ;
 }
 
 #container a {

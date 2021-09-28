@@ -4,32 +4,15 @@
     <ion-toggle [(ngModel)]="opcao" (click)="doar()"></ion-toggle>
   </ion-item>
     <div id="container">
-      <div>
-      <ion-card >
-        <ion-card-header>
-          <img src="assets/icon/foto-gatinho.jpeg">
-          <ion-card-title>
-            Dorinha
-          </ion-card-title>
-          <ion-card-subtitle>
-            Subtítulo do cartão
-          </ion-card-subtitle>
-          <ion-button color="primary" (click)="abrirPagina()">Adotar</ion-button>
-        </ion-card-header>
+      <ion-card *ngFor="let gato of gatos">
+      <img src="assets/icon/{{gato.arquivo}}.jpeg">
+        <ion-card-title>
+          {{gato.nome}}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{gato.descricao}}
+        </ion-card-subtitle>
+        <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
       </ion-card>
-
-      <ion-card>
-        <ion-card-header>
-          <img src="assets/icon/oreo.jpeg">
-          <ion-card-title>
-            Oreo
-          </ion-card-title>
-          <ion-card-subtitle>
-            Subtítulo do cartão
-          </ion-card-subtitle>
-          <ion-button color="primary" (click)="abrirPagina()">Adotar</ion-button>
-        </ion-card-header>
-      </ion-card>
-    </div>
     </div>
 </ion-content>

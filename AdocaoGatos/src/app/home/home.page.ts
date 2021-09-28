@@ -10,6 +10,10 @@ import { AlertController } from '@ionic/angular';
 export class HomePage implements OnInit, OnDestroy{
   nome = 'Adotar'
   opcao = true
+  gatos = [
+    {id: 1, arquivo:'foto-gatinho', nome:'Dorinha', descricao:'sou um gato dorminhão'},
+    {id: 2, arquivo:'oreo', nome:'Oreo', descricao:'sou um gato comilao'}
+  ]
 
   constructor(
     public nav: NavController,
@@ -30,8 +34,8 @@ export class HomePage implements OnInit, OnDestroy{
     this.opcao = false
   }
 
-  abrirPagina(){
-    this.nav.navigateForward('formulario')
+  abrirPagina(id){
+    this.nav.navigateForward(`formulario/${id}`)
   }
 
   async popupSalvar(){
