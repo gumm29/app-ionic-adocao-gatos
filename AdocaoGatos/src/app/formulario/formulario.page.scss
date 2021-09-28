@@ -19,3 +19,108 @@ img {
     display: flex;
     margin: auto;
 }
+
+.div-formulario form label,p{
+  --color: black !important;
+}
+
+#container {
+  text-align: center;
+  color: #fabf61;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu{
+  font-size: 20px;
+  float: left;
+  margin-left: 1%;
+}
+
+.card{
+  text-align: center;
+  float:none;
+  left: 31%;
+}
+
+.container{
+  --background: #ececec;
+}
+
+ion-content{
+  top: 80px;
+  --background: #ececec;
+}
+
+ion-card-header img{
+  width: 150px;
+  height: 150px;
+}
+
+ion-card{
+  --background: #ED8F65;
+  width: 40%;
+  left: 10%;
+  float:left;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#header{
+  text-align: center;
+  width: 120px;
+}
+
+#cor_header{
+  --background: #38b6ff;
+}
+
+#cor_footer{
+  --background: #fabf61;
+}
+
+#footer {
+  font-size: 14px;
+}
+
+.div-formulario {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  margin-top: 135px;
+  background-color: white;
+  padding: 15px;
+  color:#38b6ff;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+form {
+  display: grid;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  display: flex;
+  margin: auto;
+}

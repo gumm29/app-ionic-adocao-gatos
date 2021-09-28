@@ -1,20 +1,10 @@
-<ion-header [translucent]="true" >
-  <ion-toolbar id="cor_header">
-    <ion-icon name="menu" class="menu"></ion-icon>
-    <ion-title id="header">
-      <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true" class="container">
   <ion-item>
     <ion-label>{{nome}}</ion-label>
-    <ion-toggle [(ngModel)]="opcao" (click)="togle()"></ion-toggle>
+    <ion-toggle [(ngModel)]="opcao" (click)="doar()"></ion-toggle>
   </ion-item>
-  <!-- <div id="container"> -->
     <div id="container">
-      <div *ngIf="opcao">
+      <div>
       <ion-card >
         <ion-card-header>
           <img src="assets/icon/foto-gatinho.jpeg">
@@ -42,45 +32,4 @@
       </ion-card>
     </div>
     </div>
-
-    <div *ngIf="!opcao">
-        <div class="div-formulario">
-          <h1>Formulário para Doação</h1>
-          <form>
-            <label>Nome</label>
-            <input type="text" name="nome"><br><br>
-    
-            <label>Endereço</label>
-            <input type="text" name="endereco"><br><br>
-    
-            <label>Celular</label>
-           <input type="text" name="telefone"><br><br>
-    
-           <label>Nome do gatinho</label>
-           <input type="text" name="nomepet"><br><br>
-
-           <label>Idade do gatinho</label>
-           <input type="text" name="idadepet"><br><br>
-
-           <label>Conte pra nós qual é o motivo da doação</label>
-           <input type="text" name="motivo"><br><br>
-
-           <label>Estamos terminando, agora conte para nós um pouco sobre a personalidade do pet</label>
-           <input type="text" name="motivo"><br><br>
-
-           <label>Por fim, adicione aqui pelo menos duas fotinhas do pet :)</label><br>
-           <input type="file" class="file-input"/><br><br> 
-           <ion-button color="primary" (click)="popupSalvar()">Salvar</ion-button>
-          </form>
-          <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
-        </div>
-    </div>
 </ion-content>
-
-<ion-footer [translucent]="true" >
-  <ion-toolbar id="cor_footer">
-    <ion-title id="footer">
-      Copyright © 2021 • Desenvolvido por  Gustavo Munis, Iris Barbosa, Karen Avelar, Enrico, Mateus.
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>

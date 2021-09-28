@@ -8,12 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'miaudote',
     pathMatch: 'full'
   },
   {
     path: 'formulario',
     loadChildren: () => import('./formulario/formulario.module').then( m => m.FormularioPageModule)
+  },
+  {
+    path: 'miaudote',
+    loadChildren: () => import('./miaudote/miaudote.module').then( m => m.MiaudotePageModule)
+  },
+  {
+    path: 'doar',
+    loadChildren: () => import('./doar/doar.module').then( m => m.DoarPageModule)
   },
 ];
 

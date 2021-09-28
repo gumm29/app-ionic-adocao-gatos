@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true" class="container">
+  <ion-item>
+    <ion-label>{{nome}}</ion-label>
+    <ion-toggle [(ngModel)]="opcao" (click)="adotar()"></ion-toggle>
+  </ion-item>
+
+  <div>
+    <div class="div-formulario">
+      <h1>Formulário para Doação</h1>
+      <form>
+        <label>Nome</label>
+        <input type="text" name="nome"><br><br>
+
+        <label>Endereço</label>
+        <input type="text" name="endereco"><br><br>
+
+        <label>Celular</label>
+        <input type="text" name="telefone"><br><br>
+
+        <label>Nome do gatinho</label>
+        <input type="text" name="nomepet"><br><br>
+
+        <label>Idade do gatinho</label>
+        <input type="text" name="idadepet"><br><br>
+
+        <label>Conte pra nós qual é o motivo da doação</label>
+        <input type="text" name="motivo"><br><br>
+
+        <label>Estamos terminando, agora conte para nós um pouco sobre a personalidade do pet</label>
+        <input type="text" name="motivo"><br><br>
+
+        <label>Por fim, adicione aqui pelo menos duas fotinhas do pet :)</label><br>
+        <input type="file" class="file-input"/><br><br> 
+        <ion-button color="primary" (click)="popupSalvar()">Salvar</ion-button>
+      </form>
+      <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
+    </div>
+  </div>
+</ion-content>

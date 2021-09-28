@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -7,17 +7,31 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  nome = 'Doar'
-  opcao = false
+export class HomePage implements OnInit, OnDestroy{
+  nome = 'Adotar'
+  opcao = true
 
   constructor(
     public nav: NavController,
-    public alert: AlertController
-  ) {}
+    public alert: AlertController,
+  ) {
+    console.log(this.opcao)
+    this.opcao = true
+  }
+
+  ngOnInit(){
+    console.log('adotar')
+    if(this.opcao == true) this.opcao = false
+    this.opcao = true
+  }
+
+  ngOnDestroy(){
+    console.log('destruir')
+    this.opcao = false
+  }
 
   abrirPagina(){
-    this.nav.navigateForward('formulario');
+    this.nav.navigateForward('formulario')
   }
 
   async popupSalvar(){
@@ -34,7 +48,10 @@ export class HomePage {
     console.log('onDidDismiss resolved with role', role);
   }
 
-  togle(){
-    this.nome = (this.opcao == true) ? 'Doar' : 'Adotar'
+  doar(){
+    console.log(this.opcao)
+    this.opcao = false
+    console.log(this.opcao)
+    this.nav.navigateForward('doar')
   }
 }
