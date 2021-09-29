@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -8,7 +9,15 @@ import { AlertController } from '@ionic/angular';
 })
 export class FormularioPage implements OnInit {
 
-  constructor(public alert: AlertController) {}
+public id
+public gato
+
+  gatos = [
+    {id: 1, arquivo:'foto-gatinho', nome:'Dorinha', descricao:'sou um gato dorminhão'},
+    {id: 2, arquivo:'oreo', nome:'Oreo', descricao:'sou um gato comilao'}
+  ]
+
+  constructor(public alert: AlertController, private route: ActivatedRoute) {}
   async abrirPopup(){
     const alert = await this.alert.create({
       cssClass: 'my-custom-class',
@@ -24,5 +33,6 @@ export class FormularioPage implements OnInit {
   }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 }

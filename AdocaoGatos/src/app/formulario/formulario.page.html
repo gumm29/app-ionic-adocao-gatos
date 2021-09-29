@@ -2,7 +2,8 @@
     <ion-title></ion-title>
     <div class="div-formulario">
       <h1>Formulário para adoção</h1>
-      <form>
+      <form *ngFor="let gato of gatos" >
+        <div ng-if="gato.id === {{id}}">
         <label>Nome:</label>
         <input type="text" name="nome"><br><br>
 
@@ -13,9 +14,10 @@
         <input type="text" name="Telefone"><br><br>
 
         <label>Nome do gatinho que você teve interesse:</label>
-        <input type="text" name="Telefone"><br><br>     
+        <input type="text" name="Telefone" value="{{gato.nome}}"><br><br>     
 
       <ion-button color="primary"(click)="abrirPopup()">Quero adotar!</ion-button>
+    </div>
       </form>
       <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
     </div>
