@@ -1,4 +1,11 @@
 #container {
+  @media (max-width: 600px) {
+    display: grid;
+    padding: 0;
+    ion-card {
+      width: 75%;
+    }
+  }
   text-align: center;
   color: #fabf61;
   position: absolute;

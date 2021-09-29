@@ -1,0 +1,17 @@
+ion-content {
+    display: flex;
+    top: 80px;
+
+    p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #qr-code{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+    }
+}
+
