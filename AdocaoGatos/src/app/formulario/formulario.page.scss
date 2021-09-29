@@ -30,7 +30,7 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 20%;
   transform: translateY(-50%);
 }
 
@@ -51,7 +51,6 @@ img {
 }
 
 ion-content{
-  top: 80px;
   --background: #ececec;
 }
 
@@ -112,6 +111,10 @@ ion-card{
   color:#38b6ff;
   border: 1px solid gray;
   border-radius: 5px;
+}
+
+.formulario-campos{
+  display: grid;
 }
 
 form {
