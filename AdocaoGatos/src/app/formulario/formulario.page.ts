@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FormularioPage implements OnInit {
 
-public id
-public gato
+public id: String
+public numero: number
 
   gatos = [
     {id: 1, arquivo:'foto-gatinho', nome:'Dorinha', descricao:'sou um gato dorminhão'},
@@ -34,5 +34,6 @@ public gato
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
+    this.numero = Number(this.id)
   }
 }

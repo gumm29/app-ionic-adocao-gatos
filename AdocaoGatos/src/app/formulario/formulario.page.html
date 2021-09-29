@@ -3,7 +3,7 @@
     <div class="div-formulario">
       <h1>Formulário para adoção</h1>
       <form *ngFor="let gato of gatos" >
-        <div ng-if="gato.id === {{id}}">
+        <div *ngIf="gato.id == numero">
         <label>Nome:</label>
         <input type="text" name="nome"><br><br>
 
