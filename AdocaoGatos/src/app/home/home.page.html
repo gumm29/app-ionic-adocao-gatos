@@ -5,17 +5,20 @@
   </ion-item>
     <div id="container">
       <ion-card *ngFor="let gato of gatos">
-      <img src="assets/icon/{{gato.arquivo}}.jpeg">
-        <div *ngIf="gato.adotado == true">
-          adotado
-        </div>
+        <div *ngIf="gato.adotado" class="adotado">Adotado</div>
+        <img src="assets/icon/{{gato.arquivo}}.jpeg">
         <ion-card-title>
           {{gato.nome}}
         </ion-card-title>
         <ion-card-subtitle>
           {{gato.descricao}}
         </ion-card-subtitle>
-        <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
+        <div *ngIf="gato.adotado">
+          <ion-button disabled color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
+        </div>
+        <div *ngIf="!gato.adotado">
+          <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
+        </div>
       </ion-card>
     </div>
 </ion-content>

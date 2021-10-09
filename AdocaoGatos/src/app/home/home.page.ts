@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import gatos from '../db/data.js'
 
@@ -22,7 +21,7 @@ export class HomePage implements OnInit, OnDestroy{
   }
 
   ngOnInit(){
-    console.log('adotar')
+    console.log(this.gatos)
     if(this.opcao == true) this.opcao = false
     this.opcao = true
   }
