@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(public nav: NavController) {
-}
-  
+
+  constructor(
+    public nav: NavController,
+  ) {}
+
   doacaoDinheiro(){
     this.nav.navigateForward('doacao-dinheiro')
-
   }
 }

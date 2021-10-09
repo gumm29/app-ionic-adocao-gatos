@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import gatos from '../db/data.js'
 
 @Component({
   selector: 'app-home',
@@ -10,16 +12,12 @@ import { AlertController } from '@ionic/angular';
 export class HomePage implements OnInit, OnDestroy{
   nome = 'Adotar'
   opcao = true
-  gatos = [
-    {id: 1, arquivo:'foto-gatinho', nome:'Dorinha', descricao:'sou um gato dorminhão'},
-    {id: 2, arquivo:'oreo', nome:'Oreo', descricao:'sou um gato comilao'}
-  ]
+  gatos = gatos
 
   constructor(
     public nav: NavController,
     public alert: AlertController,
   ) {
-    console.log(this.opcao)
     this.opcao = true
   }
 

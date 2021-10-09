@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import gatos from '../db/data.js'
 
 @Component({
   selector: 'app-formulario',
@@ -10,14 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class FormularioPage implements OnInit {
 
 public id: String
-public numero: number
+public numero: number = 0
 
-  gatos = [
-    {id: 1, arquivo:'foto-gatinho', nome:'Dorinha', descricao:'sou um gato dorminhão'},
-    {id: 2, arquivo:'oreo', nome:'Oreo', descricao:'sou um gato comilao'}
-  ]
+  gatos = gatos
 
-  constructor(public alert: AlertController, private route: ActivatedRoute) {}
+  constructor(public alert: AlertController,
+    private route: ActivatedRoute,
+    public nav: NavController
+  ) {}
+
   async abrirPopup(){
     const alert = await this.alert.create({
       cssClass: 'my-custom-class',
@@ -30,6 +33,11 @@ public numero: number
 
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+
+    gatos[this.numero -1]['adotado'] = true
+    console.log(this.numero)
+    console.log(gatos[this.numero-1]['adotado'])
+    this.nav.navigateForward(`home`)
   }
 
   ngOnInit() {

@@ -6,6 +6,9 @@
     <div id="container">
       <ion-card *ngFor="let gato of gatos">
       <img src="assets/icon/{{gato.arquivo}}.jpeg">
+        <div *ngIf="gato.adotado == true">
+          adotado
+        </div>
         <ion-card-title>
           {{gato.nome}}
         </ion-card-title>

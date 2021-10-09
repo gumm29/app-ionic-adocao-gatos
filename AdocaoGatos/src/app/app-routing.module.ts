@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'doar',
     loadChildren: () => import('./doar/doar.module').then( m => m.DoarPageModule)
-  },  {
+  },
+  {
     path: 'doacao-dinheiro',
     loadChildren: () => import('./doacao-dinheiro/doacao-dinheiro.module').then( m => m.DoacaoDinheiroPageModule)
   },
