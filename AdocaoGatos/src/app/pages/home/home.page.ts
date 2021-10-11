@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
-import gatos from '../db/data.js'
+import gatos from '../../db/data.js'
 
 @Component({
   selector: 'app-home',

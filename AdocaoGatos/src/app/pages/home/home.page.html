@@ -1,8 +1,10 @@
 <ion-content [fullscreen]="true" class="container">
+  
   <ion-item>
     <ion-label>{{nome}}</ion-label>
     <ion-toggle [(ngModel)]="opcao" (click)="doar()"></ion-toggle>
   </ion-item>
+
     <div id="container">
       <ion-card *ngFor="let gato of gatos">
         <div *ngIf="gato.adotado" class="adotado">Adotado</div>

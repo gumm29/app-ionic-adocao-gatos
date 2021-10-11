@@ -3,7 +3,7 @@ import { AlertController } from '@ionic/angular';
 export function validacao(campos: object, alerta: AlertController){
   let condicao = ''
   for(let campo in campos){
-    if(!campos[campo]) return modal(campo, alerta)
+    if(!campos[campo] || !campos[campo].trim()) return modal(campo, alerta)
     condicao += `campos.${campo} && `
   }
   condicao = condicao.slice(0,-4)

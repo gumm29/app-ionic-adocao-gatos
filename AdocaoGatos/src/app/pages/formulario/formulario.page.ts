@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-import gatos from '../db/data.js'
-import { validacao } from '../util/validacao'
+import gatos from '../../db/data.js'
+import { validacao } from '../../util/validacao'
 
 @Component({
   selector: 'app-formulario',
@@ -25,6 +25,10 @@ export class FormularioPage implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     public nav: NavController
   ) {}
+
+  apenasNumero = (numero) => { if(!numero.key.match('[0-9]')) return false }
+
+  apenasLetra =(letra) => { if(letra.key.match('[0-9]')) return false }
 
   async abrirPopup(){
     let form = {'nome':this.nome, 'endereco':this.endereco, 'celular':this.celular}
@@ -54,7 +58,7 @@ export class FormularioPage implements OnInit, OnDestroy {
     this.teste = true
   }
 
-  ngOnDestroy(){// ver
+  ngOnDestroy(){
     this.teste = true
   }
 }

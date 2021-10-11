@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,19 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'formulario/:id',
-    loadChildren: () => import('./formulario/formulario.module').then( m => m.FormularioPageModule)
+    loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
   },
   {
     path: 'miaudote',
-    loadChildren: () => import('./miaudote/miaudote.module').then( m => m.MiaudotePageModule)
+    loadChildren: () => import('./pages/miaudote/miaudote.module').then( m => m.MiaudotePageModule)
   },
   {
     path: 'doar',
-    loadChildren: () => import('./doar/doar.module').then( m => m.DoarPageModule)
+    loadChildren: () => import('./pages/doar/doar.module').then( m => m.DoarPageModule)
   },
   {
     path: 'doacao-dinheiro',
-    loadChildren: () => import('./doacao-dinheiro/doacao-dinheiro.module').then( m => m.DoacaoDinheiroPageModule)
+    loadChildren: () => import('./pages/doacao-dinheiro/doacao-dinheiro.module').then( m => m.DoacaoDinheiroPageModule)
   },
 
 ];

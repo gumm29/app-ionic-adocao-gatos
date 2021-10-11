@@ -88,6 +88,18 @@ ion-card{
   border-radius: 5px;
 }
 
+form ion-item{
+  color: #000;
+  --ion-item-background: #ffffff;
+}
+
+button{
+  background-color: #38b6ff;
+  color: #fff;
+  border: none;
+  height: 50px;
+}
+
 form {
   display: grid;
 }

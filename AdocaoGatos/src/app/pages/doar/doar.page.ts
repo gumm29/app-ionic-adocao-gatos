@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
-import gatos from '../db/data.js'
-import Gato, {IGato} from '../model/gato'
-import { validacao } from '../util/validacao'
+import gatos from '../../db/data.js'
+import Gato, {IGato} from '../../model/gato'
+import { validacao } from '../../util/validacao'
 
 @Component({
   selector: 'app-doar',
@@ -49,6 +49,10 @@ export class DoarPage implements OnInit, OnDestroy{
   ngOnDestroy(){
     this.opcao = true
   }
+  
+  apenasNumero = (numero) => { if(!numero.key.match('[0-9]')) return false }
+
+  apenasLetra =(letra) => { if(letra.key.match('[0-9]')) return false }
 
   adotar(){
     this.opcao = true

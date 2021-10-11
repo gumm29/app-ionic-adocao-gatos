@@ -4,6 +4,10 @@
     padding: 0;
     ion-card {
       width: 75%;
+      margin: 10px 0 0 0;
+    }
+    .adotado{
+      margin-left: -200px;
     }
   }
   text-align: center;
@@ -42,7 +46,7 @@ ion-card-header img{
 }
 
 ion-card{
-  --background: #ED8F65;
+  --background: #fabf61;
   width: 40%;
   left: 10%;
   padding: 30px;
@@ -63,8 +67,8 @@ ion-card{
   margin: 0;
 }
 
-ion-card-subtitle{
-  color: aliceblue ;
+ion-card-title, ion-card-subtitle{
+  color: #000000;
 }
 
 #container a {
@@ -115,4 +119,8 @@ img {
   color: #ececec;
   transform: rotate(-45deg);
   margin-left: -450px;
+}
+
+ion-tabs{
+  color:rgb(195, 72, 72);
 }

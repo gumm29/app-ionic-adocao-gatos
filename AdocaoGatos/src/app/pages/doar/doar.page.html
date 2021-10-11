@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true" class="container">
+  <ion-item>
+    <ion-label>{{tipo}}</ion-label>
+    <ion-toggle [(ngModel)]="opcao" (click)="adotar()"></ion-toggle>
+  </ion-item>
+
+  <div>
+    <div class="div-formulario">
+      <h1>Formulário para Doação</h1>
+      <form (ngSubmit)="cadastrarGato()">
+        <ion-label>Nome</ion-label>
+        <ion-item>
+          <ion-input type="text" name="nome" maxlength="50" [(ngModel)]="nome" (keypress)="apenasLetra($event)"></ion-input>
+        </ion-item>
+
+        <ion-label>Endereço</ion-label>
+        <ion-item>
+          <ion-input type="text" name="endereco" maxlength="50" [(ngModel)]="endereco"></ion-input>
+        </ion-item>
+
+        <ion-label>Celular</ion-label>
+        <ion-item>
+          <ion-input type="text" maxlength="11" name="telefone" [(ngModel)]="celular" (keypress)="apenasNumero($event)"></ion-input>
+        </ion-item>
+
+        <ion-label>Nome do gatinho</ion-label>
+        <ion-item>
+          <ion-input type="text" name="nomepet" maxlength="10" [(ngModel)]="nomeGato" (keypress)="apenasLetra($event)"></ion-input>
+        </ion-item>
+
+        <ion-label>Idade do gatinho</ion-label>
+        <ion-item>
+          <ion-input type="text" name="idadepet" maxlength="2" [(ngModel)]="idadeGato" (keypress)="apenasNumero($event)"></ion-input>
+        </ion-item>
+
+        <ion-label>Conte pra nós qual é o motivo da doação</ion-label>
+        <ion-item>
+          <ion-input type="text" name="motivo" maxlength="30" [(ngModel)]="motivo" (keypress)="apenasLetra($event)"></ion-input>
+        </ion-item>
+
+        <ion-label>Estamos terminando, agora conte para nós um pouco sobre a personalidade do pet</ion-label>
+        <ion-item>
+          <ion-input type="text" name="motivo" maxlength="30" [(ngModel)]="personalidadeGato" (keypress)="apenasLetra($event)"></ion-input>
+        </ion-item>
+
+        <ion-label>Por fim, adicione aqui pelo menos duas fotinhas do pet :)</ion-label>
+        <ion-item>
+          <ion-input type="file" class="file-input" ></ion-input>
+        </ion-item>
+        <br>
+        <button ion-button type="submit" color="primary" >Salvar</button>
+      </form>
+      <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
+    </div>
+  </div>
+</ion-content>
