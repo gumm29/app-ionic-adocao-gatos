@@ -71,4 +71,8 @@ export class DoarPage implements OnInit, OnDestroy{
       this.adotar()
     }
   }
+
+  uploadFoto(event){
+    console.log(<FileList>event.srcElement.files[0].name) // colocar this.Igato.arquivo
+  }
 }

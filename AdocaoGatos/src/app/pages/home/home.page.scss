@@ -2,9 +2,15 @@
   @media (max-width: 600px) {
     display: grid;
     padding: 0;
+    top: 35%;
+    // margin-bottom: 1;
     ion-card {
-      width: 75%;
-      margin: 10px 0 0 0;
+      width: 80%;
+      height: 250px;
+      padding-top: 10px;
+      margin-left: 0;
+      margin-top: 5px;
+      // margin: 10px 0 0 0;
     }
     .adotado{
       margin-left: -200px;
@@ -15,7 +21,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 267px;
+  bottom: 100px;
   padding: 200px;
   transform: translateY(-50%);
 }
@@ -34,6 +41,7 @@
 
 .container{
   --background: #ececec;
+  margin-top: 60px;
 }
 
 ion-content{
@@ -49,7 +57,7 @@ ion-card{
   --background: #fabf61;
   width: 40%;
   left: 10%;
-  padding: 30px;
+  // padding: 30px;
   float:left;
 }
 
@@ -109,7 +117,7 @@ form {
 
 img {
   width: 150px;
-  height: auto;
+  height: 150px;
   display: flex;
   margin: auto;
 }

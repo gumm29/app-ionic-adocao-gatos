@@ -16,6 +16,7 @@ export class HomePage implements OnInit, OnDestroy{
   constructor(
     public nav: NavController,
     public alert: AlertController,
+    // public sql: DbService
   ) {
     this.opcao = true
   }

@@ -1,26 +1,25 @@
-<ion-content [fullscreen]="true" class="container">
-  
+<ion-content [fullscreen]="false" class="container" padding>
   <ion-item>
     <ion-label>{{nome}}</ion-label>
     <ion-toggle [(ngModel)]="opcao" (click)="doar()"></ion-toggle>
   </ion-item>
 
-    <div id="container">
-      <ion-card *ngFor="let gato of gatos">
-        <div *ngIf="gato.adotado" class="adotado">Adotado</div>
-        <img src="assets/icon/{{gato.arquivo}}.jpeg">
-        <ion-card-title>
-          {{gato.nome}}
-        </ion-card-title>
-        <ion-card-subtitle>
-          {{gato.descricao}}
-        </ion-card-subtitle>
-        <div *ngIf="gato.adotado">
-          <ion-button disabled color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
-        </div>
-        <div *ngIf="!gato.adotado">
-          <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
-        </div>
-      </ion-card>
-    </div>
+  <ion-scroll id="container" scrollX="true">
+    <ion-card *ngFor="let gato of gatos">
+      <div *ngIf="gato.adotado" class="adotado">Adotado</div>
+      <img src="assets/icon/{{gato.arquivo}}.jpeg">
+      <ion-card-title>
+        {{gato.nome}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{gato.descricao}}
+      </ion-card-subtitle>
+      <div *ngIf="gato.adotado">
+        <ion-button disabled color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
+      </div>
+      <div *ngIf="!gato.adotado">
+        <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
+      </div>
+    </ion-card>
+  </ion-scroll>
 </ion-content>

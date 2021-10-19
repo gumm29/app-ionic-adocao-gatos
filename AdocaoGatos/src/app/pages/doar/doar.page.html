@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" class="container">
+<ion-content [fullscreen]="true" class="container" padding>
   <ion-item>
     <ion-label>{{tipo}}</ion-label>
     <ion-toggle [(ngModel)]="opcao" (click)="adotar()"></ion-toggle>
@@ -20,7 +20,7 @@
 
         <ion-label>Celular</ion-label>
         <ion-item>
-          <ion-input type="text" maxlength="11" name="telefone" [(ngModel)]="celular" (keypress)="apenasNumero($event)"></ion-input>
+          <ion-input type="text" inputmode="numeric" maxlength="11" name="telefone" [(ngModel)]="celular" (keypress)="apenasNumero($event)"></ion-input>
         </ion-item>
 
         <ion-label>Nome do gatinho</ion-label>
@@ -30,7 +30,7 @@
 
         <ion-label>Idade do gatinho</ion-label>
         <ion-item>
-          <ion-input type="text" name="idadepet" maxlength="2" [(ngModel)]="idadeGato" (keypress)="apenasNumero($event)"></ion-input>
+          <ion-input type="text" inputmode="numeric" name="idadepet" maxlength="2" [(ngModel)]="idadeGato" (keypress)="apenasNumero($event)"></ion-input>
         </ion-item>
 
         <ion-label>Conte pra nós qual é o motivo da doação</ion-label>
@@ -45,7 +45,7 @@
 
         <ion-label>Por fim, adicione aqui pelo menos duas fotinhas do pet :)</ion-label>
         <ion-item>
-          <ion-input type="file" class="file-input" ></ion-input>
+          <ion-input type="file" id="file" (change)="uploadFoto($event)"></ion-input>
         </ion-item>
         <br>
         <button ion-button type="submit" color="primary" >Salvar</button>
