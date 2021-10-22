@@ -50,11 +50,12 @@ export class EditarPage implements OnInit {
     for(let gato of gatos){
       if(gato.id == this.numero){
         this.Igato.id = gato.id
-        this.Igato.nome = this.nome
-        this.Igato.descricao = this.motivo
-        this.banco.salvar(this.Igato) // modificar para editar
+        this.Igato.nome = gato.nome + this.nome
+        this.Igato.descricao = gato.descricao + this.motivo
+        this.banco.editar(this.Igato)
       }
     }
+    this.nav.navigateForward('home')
   }
 
   deletar(id){

@@ -26,8 +26,15 @@ export class DbService {
     console.log(this.storage.get('gatos'))
   }
 
-  editar(){
-
+  editar(gatoEditar){
+    for(let gato of this.gatosBanco){
+      if(gato.id == gatoEditar.id){
+        gato.nome = gatoEditar.nome
+        gato.descricao = gatoEditar.descricao
+      }
+    }
+    console.log(this.gatosBanco)
+    this.storage.set('gatos', this.gatosBanco)
   }
 
   deletar(indice: number){
