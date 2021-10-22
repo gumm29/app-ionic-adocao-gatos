@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="container" padding>
+  <ion-item>
+    <ion-label>{{tipo}}</ion-label>
+    <ion-toggle [(ngModel)]="opcao" (click)="adotar()"></ion-toggle>
+  </ion-item>
+
+  <div>
+    <div class="div-formulario">
+      <h1>Formulário edição para Doação</h1>
+      <form (ngSubmit)="edita()" *ngFor="let gato of gatos" >
+        <div class="formulario-campos" *ngIf="gato.id == numero">
+          <ion-label>Nome do gatinho</ion-label>
+          <ion-item>
+            <ion-input type="text" name="nomepet" maxlength="10" [(ngModel)]="nome" (keypress)="apenasLetra($event)">{{gato.nome}}</ion-input>
+          </ion-item>
+
+          <!-- <ion-label>Idade do gatinho</ion-label>
+          <ion-item>
+            <ion-input type="text" inputmode="numeric" name="idadepet" maxlength="2" [(ngModel)]="idadeGato" (keypress)="apenasNumero($event)">{{gato.idadeGato}}</ion-input>
+          </ion-item> -->
+
+          <ion-label>Conte pra nós qual é o motivo da doação</ion-label>
+          <ion-item>
+            <ion-input type="text" name="motivo" maxlength="30" [(ngModel)]="motivo" (keypress)="apenasLetra($event)">{{gato.descricao}}</ion-input>
+          </ion-item>
+
+          <!-- <ion-label>Estamos terminando, agora conte para nós um pouco sobre a personalidade do pet</ion-label>
+          <ion-item>
+            <ion-input type="text" name="motivo" maxlength="30" [(ngModel)]="personalidadeGato" (keypress)="apenasLetra($event)"></ion-input>
+          </ion-item> -->
+
+          <ion-label>Por fim, adicione aqui pelo menos duas fotinhas do pet :)</ion-label>
+          <ion-item>
+            <ion-input type="file" id="file" (change)="uploadFoto($event)"></ion-input>
+          </ion-item>
+          <br>
+          <button ion-button type="submit" color="primary" >Salvar</button>
+          <ion-button color="primary" (click)="deletar(gato.id)">Deletar</ion-button>
+        </div>
+      </form>
+      <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
+    </div>
+  </div>
+</ion-content>

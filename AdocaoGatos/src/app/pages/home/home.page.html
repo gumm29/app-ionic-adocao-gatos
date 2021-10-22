@@ -5,9 +5,17 @@
   </ion-item>
 
   <ion-scroll id="container" scrollX="true">
+    <div *ngIf="gatos.length == 0">
+      <p>Doe um gato para aparecer aqui na lista</p>
+    </div>
     <ion-card *ngFor="let gato of gatos">
       <div *ngIf="gato.adotado" class="adotado">Adotado</div>
-      <img src="assets/icon/{{gato.arquivo}}.jpeg">
+      <div *ngIf="gato.nomeArquivo">
+        <img src="{{gato.nomeArquivo}}">
+      </div>
+      <div *ngIf="!gato.nomeArquivo">
+        <img src="assets/icon/{{gato.arquivo}}.jpeg">
+      </div>
       <ion-card-title>
         {{gato.nome}}
       </ion-card-title>
@@ -18,6 +26,7 @@
         <ion-button disabled color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
       </div>
       <div *ngIf="!gato.adotado">
+        <ion-button color="primary" (click)="editar(gato.id)">Editar</ion-button>
         <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
       </div>
     </ion-card>

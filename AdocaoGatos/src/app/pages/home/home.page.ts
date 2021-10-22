@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { DbService } from '../../services/db.service'
 import gatos from '../../db/data.js'
+import { IGato } from '../../model/gato'
 
 @Component({
   selector: 'app-home',
@@ -11,18 +13,22 @@ import gatos from '../../db/data.js'
 export class HomePage implements OnInit, OnDestroy{
   nome = 'Adotar'
   opcao = true
-  gatos = gatos
+  gatos: IGato[]
+  banco: DbService
 
   constructor(
     public nav: NavController,
     public alert: AlertController,
-    // public sql: DbService
+    bd: DbService
   ) {
     this.opcao = true
+    this.banco = bd
+    this.gatos = this.banco.gatosBanco
+    console.log(this.gatos)
   }
 
   ngOnInit(){
-    console.log(this.gatos)
+    // console.log(this.gatos)
     if(this.opcao == true) this.opcao = false
     this.opcao = true
   }
@@ -34,6 +40,10 @@ export class HomePage implements OnInit, OnDestroy{
 
   abrirPagina(id){
     this.nav.navigateForward(`formulario/${id}`)
+  }
+
+  editar(id){
+    this.nav.navigateForward(`editar/${id}`)
   }
 
   async popupSalvar(){

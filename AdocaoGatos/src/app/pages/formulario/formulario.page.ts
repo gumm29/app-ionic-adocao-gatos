@@ -26,9 +26,19 @@ export class FormularioPage implements OnInit, OnDestroy {
     public nav: NavController
   ) {}
 
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id')
+    this.numero = Number(this.id)
+    this.teste = true
+  }
+
+  ngOnDestroy(){
+    this.teste = true
+  }
+
   apenasNumero = (numero) => { if(!numero.key.match('[0-9]')) return false }
 
-  apenasLetra =(letra) => { if(letra.key.match('[0-9]')) return false }
+  apenasLetra = (letra) => { if(letra.key.match('[0-9]')) return false }
 
   async abrirPopup(){
     let form = {'nome':this.nome, 'endereco':this.endereco, 'celular':this.celular}
@@ -50,15 +60,5 @@ export class FormularioPage implements OnInit, OnDestroy {
     await alert.present();
     // const { role } = await alert.onDidDismiss();
     // console.log('onDidDismiss resolved with role', role);
-  }
-
-  ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id')
-    this.numero = Number(this.id)
-    this.teste = true
-  }
-
-  ngOnDestroy(){
-    this.teste = true
   }
 }

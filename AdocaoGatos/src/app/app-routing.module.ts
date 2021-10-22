@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'doacao-dinheiro',
     loadChildren: () => import('./pages/doacao-dinheiro/doacao-dinheiro.module').then( m => m.DoacaoDinheiroPageModule)
   },
+  {
+    path: 'editar/:id',
+    loadChildren: () => import('./pages/editar/editar.module').then( m => m.EditarPageModule)
+  },
+
 
 ];
 
