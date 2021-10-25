@@ -86,4 +86,8 @@ export class DoarPage implements OnInit, OnDestroy{
     img.readAsDataURL(teste)
     img.onload = () => this.arquivo = `${img.result}`
   }
+
+  doacaoDinheiro(){
+    this.nav.navigateForward('doacao-dinheiro')
+  }
 }

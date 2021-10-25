@@ -1,4 +1,12 @@
 <ion-content [fullscreen]="true" class="container" padding>
+  <ion-header [translucent]="false" >
+    <ion-toolbar id="cor_header">
+      <ion-title id="header">
+        <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-item>
     <ion-label>{{tipo}}</ion-label>
     <ion-toggle [(ngModel)]="opcao" (click)="adotar()"></ion-toggle>
@@ -54,3 +62,12 @@
     </div>
   </div>
 </ion-content>
+
+<ion-footer [translucent]="false" >
+  <ion-toolbar id="cor_footer">
+    <ion-title id="footer">
+      Copyright © 2021 • Desenvolvido por  Gustavo Munis, Iris Barbosa, Karen Avelar, Enrico Cioffi, Matheus Carvalho.
+    </ion-title>
+    <ion-button (click)="doacaoDinheiro()">Clique aqui e ajude nossa causa!</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -15,4 +15,8 @@ export class MiaudotePage {
   iniciar(){
     this.nav.navigateForward('home');
   }
+
+  doacaoDinheiro(){
+    this.nav.navigateForward('doacao-dinheiro')
+  }
 }

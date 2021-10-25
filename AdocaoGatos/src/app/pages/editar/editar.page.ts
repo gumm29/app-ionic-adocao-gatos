@@ -15,6 +15,7 @@ export class EditarPage implements OnInit {
   id: String
   numero: number = 0
   nome: String = ''
+  arquivo: String = ''
   endereco: String = ''
   celular: String = ''
   nomeGato: String = ''
@@ -52,6 +53,7 @@ export class EditarPage implements OnInit {
         this.Igato.id = gato.id
         this.Igato.nome = gato.nome + this.nome
         this.Igato.descricao = gato.descricao + this.motivo
+        this.Igato.nomeArquivo = this.arquivo
         this.banco.editar(this.Igato)
       }
     }
@@ -61,5 +63,17 @@ export class EditarPage implements OnInit {
   deletar(id){
     this.banco.deletar(id)
     this.nav.navigateForward('home')
+  }
+
+  uploadFoto(event){
+    let teste = <File>event.srcElement.files[0]
+    console.log(teste)
+    let img = new FileReader()
+    img.readAsDataURL(teste)
+    img.onload = () => this.arquivo = `${img.result}`
+  }
+
+  doacaoDinheiro(){
+    this.nav.navigateForward('doacao-dinheiro')
   }
 }

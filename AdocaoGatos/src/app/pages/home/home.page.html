@@ -1,10 +1,18 @@
 <ion-content [fullscreen]="false" class="container" padding>
+  <ion-header [translucent]="false" >
+    <ion-toolbar id="cor_header">
+      <ion-title id="header">
+        <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-item>
     <ion-label>{{nome}}</ion-label>
     <ion-toggle [(ngModel)]="opcao" (click)="doar()"></ion-toggle>
   </ion-item>
 
-  <ion-scroll id="container" scrollX="true">
+  <div id="container" scrollX="true">
     <div *ngIf="gatos.length == 0">
       <p>Doe um gato para aparecer aqui na lista</p>
     </div>
@@ -30,5 +38,14 @@
         <ion-button color="primary" (click)="abrirPagina(gato.id)">Adotar</ion-button>
       </div>
     </ion-card>
-  </ion-scroll>
+  </div>
 </ion-content>
+
+<ion-footer [translucent]="false" >
+  <ion-toolbar id="cor_footer">
+    <ion-title id="footer">
+      Copyright © 2021 • Desenvolvido por  Gustavo Munis, Iris Barbosa, Karen Avelar, Enrico Cioffi, Matheus Carvalho.
+    </ion-title>
+    <ion-button (click)="doacaoDinheiro()">Clique aqui e ajude nossa causa!</ion-button>
+  </ion-toolbar>
+</ion-footer>

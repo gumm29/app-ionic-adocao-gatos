@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-toolbar>
+<ion-content id="doacao">
+  <ion-header [translucent]="false" >
+    <ion-toolbar id="cor_header">
+      <ion-title id="header">
+        <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  </ion-toolbar>
-</ion-header>
-
-<ion-content id="doacao"> 
-  
   <p>Sua generosa doação pode salvar a vida de muitos gatinhxs!</p>
   <p>As doações em dinheiro são destinadas à compra de ração, remédios, exames e castrações dos nossos felinos.</p>
   <p>Acesse o QR Code e doe o quanto quiser:</p>
   <img alt="qr-code" id="qr-code" float-left src="assets/icon/qrcode-gatos.png">
 
 </ion-content>
+
+<ion-footer [translucent]="false" >
+  <ion-toolbar id="cor_footer">
+    <ion-title id="footer">
+      Copyright © 2021 • Desenvolvido por  Gustavo Munis, Iris Barbosa, Karen Avelar, Enrico Cioffi, Matheus Carvalho.
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

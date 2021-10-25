@@ -1,24 +1,41 @@
 <ion-content>
-    <ion-title></ion-title>
-    <div class="div-formulario">
-      <h1>Formulário para adoção</h1>
-      <form *ngFor="let gato of gatos" >
-        <div class="formulario-campos" *ngIf="gato.id == numero">
-        <label>Nome:</label>
-        <input type="text" id="nome" name="nome" maxlength="50" [(ngModel)]="nome" (keypress)="apenasLetra($event)"><br><br>
+  <ion-header [translucent]="false" >
+    <ion-toolbar id="cor_header">
+      <ion-title id="header">
+        <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-        <label>Endereço:</label>
-        <input type="text" name="endereco" maxlength="50" [(ngModel)]="endereco"><br><br>
+  <div class="div-formulario">
+    <h1>Formulário para adoção</h1>
+    <form *ngFor="let gato of gatos" >
+      <div class="formulario-campos" *ngIf="gato.id == numero">
+      <label>Nome:</label>
+      <input type="text" id="nome" name="nome" maxlength="50" [(ngModel)]="nome" (keypress)="apenasLetra($event)"><br><br>
 
-        <label>Celular:</label>
-        <input type="text" name="Telefone" maxlength="11" [(ngModel)]="celular" (keypress)="apenasNumero($event)"><br><br>
+      <label>Endereço:</label>
+      <input type="text" name="endereco" maxlength="50" [(ngModel)]="endereco"><br><br>
 
-        <label>Nome do gatinho que você teve interesse:</label>
-        <input type="text" name="NomeGato" value="{{gato.nome}}"><br><br>     
+      <label>Celular:</label>
+      <input type="text" name="Telefone" maxlength="11" [(ngModel)]="celular" (keypress)="apenasNumero($event)"><br><br>
+
+      <label>Nome do gatinho que você teve interesse:</label>
+      <input type="text" name="NomeGato" value="{{gato.nome}}"><br><br>
 
       <ion-button color="primary" (click)="abrirPopup()">Quero adotar!</ion-button>
-    </div>
-      </form>
-      <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
-    </div>
+      </div>
+    </form>
+  </div>
+
+  <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif" width="300px" height="300px">
 </ion-content>
+
+<ion-footer [translucent]="false" >
+  <ion-toolbar id="cor_footer">
+    <ion-title id="footer">
+      Copyright © 2021 • Desenvolvido por  Gustavo Munis, Iris Barbosa, Karen Avelar, Enrico Cioffi, Matheus Carvalho.
+    </ion-title>
+    <ion-button (click)="doacaoDinheiro()">Clique aqui e ajude nossa causa!</ion-button>
+  </ion-toolbar>
+</ion-footer>

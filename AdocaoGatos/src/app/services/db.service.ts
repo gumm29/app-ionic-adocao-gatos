@@ -31,6 +31,7 @@ export class DbService {
       if(gato.id == gatoEditar.id){
         gato.nome = gatoEditar.nome
         gato.descricao = gatoEditar.descricao
+        gato.nomeArquivo = gatoEditar.nomeArquivo
       }
     }
     console.log(this.gatosBanco)

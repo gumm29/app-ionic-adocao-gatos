@@ -1,7 +1,24 @@
-<ion-content class="container">
+<ion-content class="container" >
+  <ion-header [translucent]="false" >
+    <ion-toolbar id="cor_header">
+      <ion-title id="header">
+        <img alt="logo" id="header-logo" float-left src="assets/icon/logo-minimizada.png">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <p>Somos uma ONG que surgiu com intuito de ajudar gatos abandonados a encontrarem um lar.</p>
   <p> Aqui no MiauDote, nós damos os primeiros cuidados e deixamos em condições do gatinhx ser adotadx para ter o máximo de amor e carinho que merece</p>
   <p></p>
   <ion-button color="primary" (click)="iniciar()">Vamos lá!</ion-button>
 
 </ion-content>
+
+<ion-footer [translucent]="false" >
+  <ion-toolbar id="cor_footer">
+    <ion-title id="footer">
+      Copyright © 2021 • Desenvolvido por  Gustavo Munis, Iris Barbosa, Karen Avelar, Enrico Cioffi, Matheus Carvalho.
+    </ion-title>
+    <ion-button (click)="doacaoDinheiro()">Clique aqui e ajude nossa causa!</ion-button>
+  </ion-toolbar>
+</ion-footer>

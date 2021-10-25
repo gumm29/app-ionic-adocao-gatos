@@ -30,10 +30,6 @@ ion-card-header img{
   height: 150px;
 }
 
-ion-content{
-  top: 80px;
-}
-
 ion-card{
   --background: #ED8F65;
   width: 40%;
@@ -98,6 +94,90 @@ button{
   color: #fff;
   border: none;
   height: 50px;
+}
+
+form {
+  display: grid;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  display: flex;
+  margin: auto;
+}
+
+
+.menu{
+  font-size: 20px;
+  float: left;
+  margin-left: 1%;
+}
+
+.card{
+  text-align: center;
+  float:none;
+  left: 31%;
+}
+
+ion-card-header img{
+  width: 150px;
+  height: 150px;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#header{
+  text-align: center;
+  width: 120px;
+}
+
+#cor_header{
+  --background: #38b6ff;
+}
+
+#cor_footer{
+  --background: #ED8F65;
+  ion-title{
+    display: flex;
+    justify-content: center;
+  }
+  ion-button {
+  display: flex;
+  justify-content: center;
+  color: #424242;
+  font-weight: 800;
+  --background: #ED8F65;
+  }
+}
+
+#footer {
+  font-size: 14px;
+}
+
+.div-formulario {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  margin-top: 5px;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 form {

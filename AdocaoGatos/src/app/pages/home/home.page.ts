@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy} from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { DbService } from '../../services/db.service'
-import gatos from '../../db/data.js'
 import { IGato } from '../../model/gato'
 
 @Component({
@@ -28,7 +27,6 @@ export class HomePage implements OnInit, OnDestroy{
   }
 
   ngOnInit(){
-    // console.log(this.gatos)
     if(this.opcao == true) this.opcao = false
     this.opcao = true
   }
@@ -65,5 +63,9 @@ export class HomePage implements OnInit, OnDestroy{
     this.opcao = false
     console.log(this.opcao)
     this.nav.navigateForward('doar')
+  }
+
+  doacaoDinheiro(){
+    this.nav.navigateForward('doacao-dinheiro')
   }
 }

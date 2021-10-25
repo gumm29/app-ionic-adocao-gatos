@@ -61,4 +61,8 @@ export class FormularioPage implements OnInit, OnDestroy {
     // const { role } = await alert.onDidDismiss();
     // console.log('onDidDismiss resolved with role', role);
   }
+
+  doacaoDinheiro(){
+    this.nav.navigateForward('doacao-dinheiro')
+  }
 }
