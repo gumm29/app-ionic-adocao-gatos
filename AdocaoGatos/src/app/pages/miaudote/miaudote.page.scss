@@ -1,10 +1,10 @@
 .container{
-  --background: #ececec;
+  --background: #38b6ff;
   text-align: center;
 }
 
 p{
-  color: black;
+  color: #fff;
 }
 
 .menu{
@@ -83,8 +83,12 @@ form {
   display: grid;
 }
 
+.p-miaudote {
+  margin-top: 35px;
+}
+
 img {
-  width: 150px;
+  width: 325px;
   height: auto;
   display: flex;
   margin: auto;
