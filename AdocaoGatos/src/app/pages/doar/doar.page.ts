@@ -1,9 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import gatos from '../../db/data.js'
 import { IGato } from '../../model/gato'
 import { validacao } from '../../util/validacao'
+import { Sanitizer } from '@angular/core';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { DbService } from '../../services/db.service'
 
 @Component({
@@ -12,6 +15,8 @@ import { DbService } from '../../services/db.service'
   styleUrls: ['./doar.page.scss'],
 })
 export class DoarPage implements OnInit, OnDestroy{
+  sanitizer: DomSanitizer
+  foto: SafeResourceUrl
   tipo: String = 'Doar'
   opcao: boolean = false
   nome: String = ''
@@ -36,6 +41,7 @@ export class DoarPage implements OnInit, OnDestroy{
   }
 
   constructor(
+    public sanit: DomSanitizer,
     public nav: NavController,
     public alert: AlertController,
     public bd: DbService
@@ -89,5 +95,17 @@ export class DoarPage implements OnInit, OnDestroy{
 
   doacaoDinheiro(){
     this.nav.navigateForward('doacao-dinheiro')
+  }
+
+  async fotografar(){
+    const imagem = await Camera.getPhoto({
+      quality: 90,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      allowEditing: false,
+    })
+
+    const imagemUrl = imagem.webPath;
+    this.foto = this.sanitizer.bypassSecurityTrustResourceUrl(imagemUrl)
   }
 }
