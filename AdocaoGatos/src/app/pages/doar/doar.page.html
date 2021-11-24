@@ -59,6 +59,17 @@
           <ion-input type="file" id="file" (change)="uploadFoto($event)"></ion-input>
         </ion-item>
         <br>
+        <div id="container">
+          <img [src]="foto" *ngif="foto"/>
+        </div>
+
+        <ion-fab vertical="button" horizontal="center" slot="fixed">
+        <ion-fab-buttom (click)="fotografar()">
+          <ion-icon name="Camera"></ion-icon>
+        </ion-fab-buttom>
+        </ion-fab>
+
+        <br>  
         <button ion-button type="submit" color="primary" >Salvar</button>
       </form>
       <img class="gif" src="https://c.tenor.com/15S5EgnUakMAAAAd/cat-kiss.gif">
