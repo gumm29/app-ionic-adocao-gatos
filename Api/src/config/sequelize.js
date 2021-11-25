@@ -11,7 +11,5 @@ if(process.env.NODE_ENV != 'production'){
       }
     }})
 }
-//console.log(config)
-//const sequelize = new Sequelize(config)
 
 module.exports = sequelize

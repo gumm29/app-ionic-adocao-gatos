@@ -28,13 +28,13 @@ rota.post('/gato', async (req, res) => {
 rota.put('/gato/:id', async (req, res) =>{
   const id = req.params.id
   const gato = await gatoService.modificar(id, req.body)
-  res.status(200).send(gato)
+  return gato ? res.status(200).send(gato) : res.status(404).send()
 })
 
 rota.delete('/gato/:id', async (req, res) =>{
   const id = req.params.id
-  await gatoService.deletar(id)
-  res.status(204).send()
+  const gato = await gatoService.deletar(id)
+  return gato ? res.status(200).send(gato) : res.status(404).send()
 })
 
 module.exports = rota
