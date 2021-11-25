@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { DbService } from '../../services/db.service'
 import { IGato } from '../../model/gato'
+import Api from '../../util/api'
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { IGato } from '../../model/gato'
 export class HomePage implements OnInit, OnDestroy{
   nome = 'Adotar'
   opcao = true
-  gatos: IGato[]
+  gatos: IGato[] = []
   banco: DbService
 
   constructor(
@@ -24,6 +25,8 @@ export class HomePage implements OnInit, OnDestroy{
     this.banco = bd
     this.gatos = this.banco.gatosBanco
     console.log(this.gatos)
+    let api = new Api()
+    console.log(api.busca())
   }
 
   ngOnInit(){
