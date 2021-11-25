@@ -4,6 +4,7 @@ import gatos from '../../db/data.js'
 import { NavController } from '@ionic/angular';
 import { DbService } from '../../services/db.service'
 import { IGato } from '../../model/gato'
+import Api from '../../util/api'
 
 @Component({
   selector: 'app-editar',
@@ -41,6 +42,8 @@ export class EditarPage implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')
     this.numero = Number(this.id)
     this.teste = true
+    let api = new Api()
+    console.log(api.buscaId(this.id))
   }
 
   apenasNumero = (numero) => { if(!numero.key.match('[0-9]')) return false }
