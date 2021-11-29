@@ -20,6 +20,10 @@ export default class Api{
   .join('&');
 
   await fetch(`${this.url}/${id}`, { method: 'PUT', body: new URLSearchParams(body) });
-  this.busca();
-  }
+  this.busca();  
+  }   
+  async remover(id: number): Promise<void> {
+      await fetch(`${this.url}/${id}`, { method: 'DELETE' });
+      this.buscar();
+    }
 }
