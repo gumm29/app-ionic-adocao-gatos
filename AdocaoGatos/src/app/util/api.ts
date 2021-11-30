@@ -10,20 +10,20 @@ export default class Api{
     const resposta = await fetch(`${this.url}/gato/${id}`)
     return await resposta.json()
   }
-  async atualizar(id: number): Promise<void> {
-    const produtoAtualizado = {
 
-  };
+  async atualizar(gato): Promise<void> {
+    const produtoAtualizado = gato
 
-  const body = Object.keys(produtoAtualizado)
-  .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(produtoAtualizado[k])}`)
-  .join('&');
+    const body = Object.keys(produtoAtualizado)
+      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(produtoAtualizado[k])}`)
+      .join('&')
 
-  await fetch(`${this.url}/${id}`, { method: 'PUT', body: new URLSearchParams(body) });
-  this.busca();  
-  }   
+    await fetch(`${this.url}/gato/${gato.id}`, { method: 'PUT', body: new URLSearchParams(body) })
+    this.busca()
+  }
+
   async remover(id: number): Promise<void> {
-      await fetch(`${this.url}/${id}`, { method: 'DELETE' });
-      this.buscar();
-    }
+    await fetch(`${this.url}/gato/${id}`, { method: 'DELETE' })
+    this.busca()
+  }
 }

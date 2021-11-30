@@ -24,9 +24,13 @@ export class HomePage implements OnInit, OnDestroy{
     this.opcao = true
     this.banco = bd
     this.gatos = this.banco.gatosBanco
-    console.log(this.gatos)
+
     let api = new Api()
-    console.log(api.busca())
+    api.busca().then(res => {
+      if(res.length == this.gatos.length){
+        console.log('bancos iguais') // logica para atualizar banco desatualizado
+      }
+    })
   }
 
   ngOnInit(){

@@ -25,6 +25,7 @@ export class EditarPage implements OnInit {
   gatos = gatos
   teste = false
   banco: DbService
+  api = new Api()
   Igato: IGato = {
     id: 0,
     arquivo: 'teste',
@@ -34,16 +35,24 @@ export class EditarPage implements OnInit {
     nomeArquivo: ''
   }
 
-  constructor(private route: ActivatedRoute,bd: DbService, public nav: NavController,) {
+  constructor(private route: ActivatedRoute,bd: DbService, public nav: NavController) {
     this.banco = bd
   }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id')
+    if (!this.id) {
+      this.api.buscaId(this.id).then(res => {
+        this.id = res.id
+        this.Igato.arquivo = res.arquivo
+        this.Igato.nome = res.nome
+        this.Igato.descricao = res.descricao
+        this.Igato.adotado = res.adotado
+        this.Igato.nomeArquivo = res.nomeArquivo
+      })
+    }
     this.numero = Number(this.id)
     this.teste = true
-    let api = new Api()
-    console.log(api.buscaId(this.id))
   }
 
   apenasNumero = (numero) => { if(!numero.key.match('[0-9]')) return false }
@@ -58,6 +67,7 @@ export class EditarPage implements OnInit {
         this.Igato.descricao = gato.descricao + this.motivo
         this.Igato.nomeArquivo = this.arquivo
         this.banco.editar(this.Igato)
+        this.api.atualizar(this.Igato)
       }
     }
     this.nav.navigateForward('home')
@@ -65,6 +75,7 @@ export class EditarPage implements OnInit {
 
   deletar(id){
     this.banco.deletar(id)
+    this.api.remover(id)
     this.nav.navigateForward('home')
   }
 
