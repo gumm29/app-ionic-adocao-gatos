@@ -12,13 +12,20 @@ export default class Api{
   }
 
   async criaGato(gato){
-    const gatoAtualizado = gato
+    const novoGato = {
+      arquivo: gato.arquivo,
+      nome: gato.nome,
+      descricao: gato.descricao,
+      adotado: gato.adotado,
+      nomeArquivo: gato.nomeArquivo
+    }
+    
 
-    const body = Object.keys(gatoAtualizado)
-      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(gatoAtualizado[k])}`)
+    const body = Object.keys(novoGato)
+      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(novoGato[k])}`)
       .join('&')
 
-      await fetch(`${this.url}/gato`, { method: 'POST', body: new URLSearchParams(body) })
+      await fetch(`${this.url}/gato`, { method: 'POST', body: new URLSearchParams(novoGato) })
       this.busca()
   }
 

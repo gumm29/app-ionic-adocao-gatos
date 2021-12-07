@@ -82,6 +82,7 @@ export class DoarPage implements OnInit, OnDestroy{
       this.Igato.descricao = this.personalidadeGato
       this.Igato.nomeArquivo = this.arquivo
       this.banco.salvar(this.Igato)
+      console.log(this.Igato)
       api.criaGato(this.Igato)
       this.teste = false
       this.adotar()
