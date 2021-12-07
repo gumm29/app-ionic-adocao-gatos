@@ -8,6 +8,7 @@ import { validacao } from '../../util/validacao'
 import { Sanitizer } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { DbService } from '../../services/db.service'
+import Api from '../../util/api'
 
 @Component({
   selector: 'app-doar',
@@ -72,6 +73,7 @@ export class DoarPage implements OnInit, OnDestroy{
   }
 
   async cadastrarGato(){
+    let api = new Api()
     let form = {'nome':this.nome, 'endereco':this.endereco, 'celular':this.celular, 'nomeGato': this.nomeGato,
     'idadeGato': this.idadeGato, 'motivo': this.motivo, 'personalidadeGato': this.personalidadeGato}
     if(await validacao(form, this.alert)){
@@ -80,6 +82,7 @@ export class DoarPage implements OnInit, OnDestroy{
       this.Igato.descricao = this.personalidadeGato
       this.Igato.nomeArquivo = this.arquivo
       this.banco.salvar(this.Igato)
+      api.criaGato(this.Igato)
       this.teste = false
       this.adotar()
     }
