@@ -12,13 +12,13 @@ export default class Api{
   }
 
   async criaGato(gato){
-    const produtoAtualizado = gato
+    const gatoAtualizado = gato
 
-    // const body = Object.keys(produtoAtualizado)
-    //   .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(produtoAtualizado[k])}`)
-    //   .join('&')
+    const body = Object.keys(gatoAtualizado)
+      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(gatoAtualizado[k])}`)
+      .join('&')
 
-      await fetch(`${this.url}/gato`, { method: 'POST', body: new URLSearchParams(gato) })
+      await fetch(`${this.url}/gato`, { method: 'POST', body: new URLSearchParams(body) })
       this.busca()
   }
 
