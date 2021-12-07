@@ -34,7 +34,7 @@ rota.put('/gato/:id', async (req, res) =>{
 rota.delete('/gato/:id', async (req, res) =>{
   const id = req.params.id
   const gato = await gatoService.deletar(id)
-  return await gato ? res.status(200).send(gato) : res.status(404).send()
+  return await gato ? res.status(200).send(gato) : res.status(404).send() // arrumar logica esta dando 404 sempre
 })
 
 module.exports = rota
