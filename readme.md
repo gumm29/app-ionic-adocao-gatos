@@ -7,3 +7,7 @@ Para gerar apk
 > cd android
 
 > ./gradlew assembleDebug
+
+Deploy no heroku
+
+> git subtree push --prefix Api heroku master
