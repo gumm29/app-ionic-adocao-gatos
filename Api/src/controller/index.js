@@ -24,21 +24,29 @@ rota.post('/gato', async (req, res) => {
   try{
     await gatoService.adicionar(req.body)
     return res.status(201).send('Adicionado com sucesso')
-  }catch(e){ 
+  }catch(e){
     return res.status(400).send(e)
   }
 })
 
 rota.put('/gato/:id', async (req, res) =>{
-  const id = req.params.id
-  const gato = await gatoService.modificar(id, req.body)
-  return gato.id ? res.status(200).send(gato) : res.status(404).send()
+  try{
+    const id = req.params.id
+    const gato = await gatoService.modificar(id, req.body)
+    return gato.id ? res.status(200).send(gato) : res.status(404).send()
+  }catch(e){
+    return res.status(400).send(e)
+  }
 })
 
 rota.delete('/gato/:id', async (req, res) =>{
-  const id = req.params.id
-  const gato = await gatoService.deletar(id)
-  return await gato.id ? res.status(200).send(gato) : res.status(404).send()
+  try{
+    const id = req.params.id
+    const gato = await gatoService.deletar(id)
+    return await gato.id ? res.status(200).send(gato) : res.status(404).send()
+  }catch(e){
+    return res.status(400).send(e)
+  }
 })
 
 module.exports = rota

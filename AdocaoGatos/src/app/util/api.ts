@@ -19,32 +19,27 @@ export default class Api{
       adotado: gato.adotado,
       nomeArquivo: gato.nomeArquivo
     }
-    
-
-    const body = Object.keys(novoGato)
-      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(novoGato[k])}`)
-      .join('&')
 
       await fetch(`${this.url}/gato`, { method: 'POST', headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': ' application/json'
-              }, body: new URLSearchParams(novoGato) })
+            'Accept': '*/*',
+            'Content-Type': ' application/json'
+        }, body: JSON.stringify(novoGato) })
       this.busca()
   }
 
   async atualizar(gato): Promise<void> {
-    const gatoAtualizado = gato
-
-    const body = Object.keys(gatoAtualizado)
-      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(gatoAtualizado[k])}`)
-      .join('&')
-
-    await fetch(`${this.url}/gato/${gato.id}`, { method: 'PUT', body: new URLSearchParams(body) })
+    await fetch(`${this.url}/gato/${gato.id}`, { method: 'PUT',headers: {
+        'Accept': '*/*',
+        'Content-Type': ' application/json'
+      }, body: JSON.stringify(gato) })
     this.busca()
   }
 
   async remover(id: number): Promise<void> {
-    await fetch(`${this.url}/gato/${id}`, { method: 'DELETE' })
+    await fetch(`${this.url}/gato/${id}`, { method: 'DELETE',headers: {
+      'Accept': '*/*',
+      'Content-Type': ' application/json'
+    }})
     this.busca()
   }
 }
