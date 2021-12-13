@@ -25,7 +25,10 @@ export default class Api{
       .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(novoGato[k])}`)
       .join('&')
 
-      await fetch(`${this.url}/gato`, { method: 'POST', body: new URLSearchParams(novoGato) })
+      await fetch(`${this.url}/gato`, { method: 'POST', headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': ' application/json'
+              }, body: new URLSearchParams(novoGato) })
       this.busca()
   }
 

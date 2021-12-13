@@ -17,7 +17,7 @@ const gatos = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN
     },
     nomeArquivo: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     }},{
       tableName: 'gato'
   })
