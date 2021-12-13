@@ -43,7 +43,7 @@ rota.delete('/gato/:id', async (req, res) =>{
   try{
     const id = req.params.id
     const gato = await gatoService.deletar(id)
-    return await gato.id ? res.status(200).send(gato) : res.status(404).send()
+    return await !false ? res.status(200).send(gato) : res.status(404).send()
   }catch(e){
     return res.status(400).send(e)
   }
