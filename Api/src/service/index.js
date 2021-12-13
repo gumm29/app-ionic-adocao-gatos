@@ -25,11 +25,7 @@ class GatoService{
   }
 
   async deletar(id){
-    if (await this.gato.findOne({where: { id: id}})){
-      return await this.gato.destroy({ where: { id: id } })
-    }else{
-      return false
-    }
+    return await this.gato.destroy({ where: { id: id } })
   }
 }
 
