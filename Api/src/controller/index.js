@@ -21,8 +21,12 @@ rota.get('/gato/:id', async (req, res) => {
 })
 
 rota.post('/gato', async (req, res) => {
-  await gatoService.adicionar(req.body)
-  return res.status(201).send('Adicionado com sucesso')
+  try{
+    await gatoService.adicionar(req.body)
+    return res.status(201).send('Adicionado com sucesso')
+  }catch(e){ 
+    return res.status(400).send(e)
+  }
 })
 
 rota.put('/gato/:id', async (req, res) =>{
